@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> 
+    <link rel="stylesheet" type="text/css" href="./css/style.css"/> -->
+</head>
+<body>
+
+<h1>Map</h1>
+
+<div class="container">
+<div id="searchBox"> 
+
+   </div>
+  </div>
+  <div class="container">
+     <div id="map">
+     </div>
+  </div>
+  <div class="container">
+      <h3>Presets</h3>
+      <input id="home" type="button" value="Home" onclick="myHome();" />
+      <input id="OceanMist" type="button" value="Ocean Mist" onclick="OceanMist();" />
+      <input id="home" type="button" value="Markers" onclick="initMap();" />
+     
+  <div>
+    <h3>Address</h3>
+     <input id="address" type="text" name="Address" />
+     <input id="search" type="button" value="Search" onclick="FindAddress();" />
+
+  </div>
+  <div>
+    <h3>Directions</h3>
+     <input id="start" type="text" />
+     <input id="end" type="text" /> 
+     <input id="directions" type="button" value="Directions" onclick="directions();" />
+     
+
+  </div>
+  </div>
+  <div>
+    <strong>Mode of Travel: </strong>
+    <select id="mode" onchange="calcRoute();">
+      <option value="DRIVING">Driving</option>
+      <option value="WALKING">Walking</option>
+      <option value="BICYCLING">Bicycling</option>
+      <option value="TRANSIT">Transit</option>
+    </select>
+    </div>
+    
+</div>
+<!-- <script src="js/Main.js"></script>
+<script src="js/directions.js"></script>
+<script src="js/Locations.js"></script>
+<script src="js/materialize.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbrDPpN6ZjI-gUSqaojUyHj7_Esr42wTE&callback=initMap"></script>
+   -->
+</body>
+</html> 

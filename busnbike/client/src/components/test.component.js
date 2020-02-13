@@ -5,7 +5,7 @@ export default class Test extends Component {
     render() {
         return (
             <div>
-                <p>This line will display on page.</p>
+                <p style={{color: 'red'}}>This line will display on page.</p>
             </div>
         )
     }

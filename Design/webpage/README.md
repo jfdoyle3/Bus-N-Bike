@@ -1,1 +1,0 @@
-API key in the HTLM file needs to be provided to show the page correctly.

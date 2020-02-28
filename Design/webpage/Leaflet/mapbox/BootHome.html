@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./css/sidebar.css"/>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap/sidebar.css"/>
     <link rel="stylesheet" type="text/css" href="./css/map.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -57,26 +57,32 @@
   <!-- SideBar -->
   <!-- Side navigation -->
 <div class="sidenav">
-    <h3>Presets</h3>
     <input id="home" type="button" value="Home" onclick="Home();" />
     <input id="oceanMist" type="button" value="Ocean Mist" onclick="OceanMist();" />
-    <a href="#">About</a>
     <h3>Address</h3>
      <input id="address" type="text" name="Address" />
      <input id="search" type="button" value="Search" onclick="FindAddress();" />
+     <br>
      <h3>GPS</h3>
      <input id="latitude" type="text" />
      <input id="longitude" type="text" />
      <input id="location" type="button" value="Display GPS" onclick="Location();" />
-     <div>
+  <form class="form-inline"> 
+    
+     <h3>Directions</h3>
+     <input id="start" type="text" />
+     <input id="end" type="text" />
+     <div class="form-group">
+     <input id="directions" type="button" value="Directions" onclick="Directions();" /> 
     <strong>Mode of Travel: </strong>
     <select id="mode" onchange="calcRoute();">
       <option value="DRIVING">Driving</option>
       <option value="WALKING">Walking</option>
       <option value="BICYCLING">Bicycling</option>
       <option value="TRANSIT">Transit</option>
-    </select>
+    </select> 
     </div>
+  </form>
 </div>
 <!--Body: google map -->
   <div class="main">

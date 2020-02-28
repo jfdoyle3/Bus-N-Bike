@@ -34,3 +34,7 @@ function Location(){
                         .bindPopup("Your Input: " + locationGPS.toString())
                         .addTo(riMap);
 }
+
+function Directions(){
+
+};

@@ -1,17 +1,17 @@
 function OceanMist(){
   const ocaeanMistGPS=[41.3743224,-71.5454094];
-  riMap.setView(ocaeanMistGPS, 18);
+  mapBox.setView(ocaeanMistGPS, 18);
   let markOceanMist = L.marker(ocaeanMistGPS)
                        .bindPopup("<b>Ocean Mist</b><br>It's the place to <a href='https://www.oceanmist.net/'>Be</a>!!!")           
-                       .addTo(riMap);
+                       .addTo(mapBox);
 };
 
 function Home(){
   let homeGPS=[41.87092932,-71.42788283];
-  riMap.flyTo(homeGPS, 18);
+  mapBox.flyTo(homeGPS, 18);
   let markHome = L.marker(homeGPS)
                   .bindPopup("<b>Home</b><br>I am Home.")
-                  .addTo(riMap);
+                  .addTo(mapBox);
 
 };
 
@@ -23,10 +23,10 @@ function Location(){
   let lng = document.getElementById("longitude").value;
   locationGPS.push(lat);
   locationGPS.push(lng);
-  riMap.flyTo(locationGPS, 13);
+  mapBox.flyTo(locationGPS, 13);
   let markLocation = L.marker(locationGPS)
                       .bindPopup("Your Input: " + locationGPS.toString())
-                      .addTo(riMap);
+                      .addTo(mapBox);
 }
 
 function CustomMarkerLocation(){
@@ -43,10 +43,10 @@ function CustomMarkerLocation(){
   let lng = document.getElementById("longitude").value;
   locationGPS.push(lat);
   locationGPS.push(lng);
-  riMap.flyTo(locationGPS, 13);
+  mapBox.flyTo(locationGPS, 13);
   let markLocation = L.marker(locationGPS,{icon: greenIcon})
                       .bindPopup("Your Input: " + locationGPS.toString())
-                      .addTo(riMap);
+                      .addTo(mapBox);
 }
 
 function FindAddress(){

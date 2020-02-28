@@ -58,17 +58,17 @@
   <!-- Side navigation -->
 <div class="sidenav">
     <h3>Presets</h3>
-    <input id="home" type="button" value="Home" onclick="myHome();" />
+    <input id="home" type="button" value="Home" onclick="Home();" />
     <input id="OceanMist" type="button" value="Ocean Mist" onclick="OceanMist();" />
     <input id="home" type="button" value="Markers" onclick="initMap();" />
     <a href="#">About</a>
     <h3>Address</h3>
      <input id="address" type="text" name="Address" />
      <input id="search" type="button" value="Search" onclick="FindAddress();" />
-     <h3>Directions</h3>
-     <input id="start" type="text" />
-     <input id="end" type="text" />
-     <input id="directions" type="button" value="Directions" onclick="directions();" />
+     <h3>GPS</h3>
+     <input id="latitude" type="text" />
+     <input id="longtitude type="text" />
+     <input id="location" type="button" value="Display GPS" onclick="Location();" />
      <div>
     <strong>Mode of Travel: </strong>
     <select id="mode" onchange="calcRoute();">
@@ -96,5 +96,6 @@
    <script src="js/displaymap.js"></script>
    <script src="js/marker.js"></script>
    <script src="js/events.js"></script>
+   <script src="js/pois.js"></script>
   </body>
 </html>

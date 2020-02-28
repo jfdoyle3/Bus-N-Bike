@@ -46,8 +46,8 @@
           <a class="nav-link disabled" href="#">Disabled</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <form class="form-inline my-2 my-lg-0" onsubmit="FindAddress()">
+        <input class="form-control mr-sm-2" name="search" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
       </form>
     </div>
@@ -59,13 +59,10 @@
 <div class="sidenav">
     <input id="home" type="button" value="Home" onclick="Home();" />
     <input id="oceanMist" type="button" value="Ocean Mist" onclick="OceanMist();" />
-    <h3>Address</h3>
-     <input id="address" type="text" name="Address" />
-     <input id="search" type="button" value="Search" onclick="FindAddress();" />
      <br>
      <h3>GPS</h3>
-     <input id="latitude" type="text" />
-     <input id="longitude" type="text" />
+     <input id="latitude" type="text" placeholder= "Latitude" />
+     <input id="longitude" type="text" placeholder="Longitude"/>
      <input id="location" type="button" value="Display GPS" onclick="Location();" />
   <form class="form-inline"> 
     
@@ -84,10 +81,13 @@
     </div>
   </form>
 </div>
-<!--Body: google map -->
+
+<!--Body:  Map -->
   <div class="main">
      <div id="map"></div>
   </div>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
@@ -102,5 +102,6 @@
    <script src="js/marker.js"></script>
    <script src="js/events.js"></script>
    <script src="js/pois.js"></script>
+   <script src="js/directions.js"></script>
   </body>
 </html>

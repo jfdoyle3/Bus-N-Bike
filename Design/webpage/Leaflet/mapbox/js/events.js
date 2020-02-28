@@ -7,4 +7,4 @@ function onMapClick(e) {
     .openOn(riMap);
 }
 
-mymap.on('click', onMapClick);
+riMap.on('click', onMapClick);

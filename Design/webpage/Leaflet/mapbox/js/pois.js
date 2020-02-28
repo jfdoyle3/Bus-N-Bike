@@ -16,6 +16,20 @@ function Home(){
 };
 
 function Location(){
+  $(".leaflet-marker-icon").remove(); // works but doesn't remove shadow map
+  $(".leaflet-popup").remove();  // works
+    let locationGPS=[];
+    let lat = document.getElementById("latitude").value;
+    let lng = document.getElementById("longitude").value;
+    locationGPS.push(lat);
+    locationGPS.push(lng);
+    riMap.flyTo(locationGPS, 13);
+    let markLocation = L.marker(locationGPS)
+                        .bindPopup("Your Input: " + locationGPS.toString())
+                        .addTo(riMap);
+}
+
+function CustomMarkerLocation(){
     const greenIcon = new L.Icon({
         iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
         shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -35,6 +49,7 @@ function Location(){
                         .addTo(riMap);
 }
 
-function Directions(){
-
-};
+function FindAddress(){
+  let input= document.getElementsByName("search").value;
+  console.log("Find Address function called: "+input);
+}

@@ -1,3 +1,7 @@
+//<input id="markers" type="button" value="Markers" onclick="initMap();" />
+//
+//
+// figure out how to show/hide this markers using the button above.
 //
 // place a default marker at GPS coors
 //

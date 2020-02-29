@@ -4,15 +4,10 @@
     <title>Bus N Bike</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
-
-   <!--Import Google Icon Font-->
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-   <!-- Compiled and minified CSS -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-   <!--Let browser know website is optimized for mobile-->
-   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap/sidebar.css"/>
     <link rel="stylesheet" type="text/css" href="./css/map.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -52,8 +47,8 @@
         </li>
       </ul>
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search" aria-label="Search">
+        <input type="button" value="Search" onclick="FindAddress()"/>
       </form>
     </div>
   </nav>
@@ -62,38 +57,43 @@
   <!-- SideBar -->
   <!-- Side navigation -->
 <div class="sidenav">
-    <h3>Presets</h3>
     <input id="home" type="button" value="Home" onclick="Home();" />
     <input id="oceanMist" type="button" value="Ocean Mist" onclick="OceanMist();" />
-    <a href="#">About</a>
-    <h3>Address</h3>
-     <input id="address" type="text" name="Address" />
-     <input id="search" type="button" value="Search" onclick="FindAddress();" />
+     <br>
      <h3>GPS</h3>
-     <input id="latitude" type="text" />
-     <input id="longitude" type="text" />
+     <input id="latitude" type="text" placeholder= "Latitude" />
+     <input id="longitude" type="text" placeholder="Longitude"/>
      <input id="location" type="button" value="Display GPS" onclick="Location();" />
-     <div>
-    <strong>Mode of Travel: </strong>
+  <form class="form-inline"> 
+    
+     <h3>Directions</h3>
+     <input id="start" type="text" />
+     <input id="end" type="text" />
+     <div class="form-group">
+     <input id="directions" type="button" value="Directions" onclick="Directions();" /> 
     <select id="mode" onchange="calcRoute();">
       <option value="DRIVING">Driving</option>
       <option value="WALKING">Walking</option>
       <option value="BICYCLING">Bicycling</option>
       <option value="TRANSIT">Transit</option>
-    </select>
+    </select> 
     </div>
+  </form>
 </div>
-<!--Body: google map -->
+
+<!--Body:  Map -->
   <div class="main">
      <div id="map"></div>
   </div>
+
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+     
     <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
@@ -101,5 +101,6 @@
    <script src="js/marker.js"></script>
    <script src="js/events.js"></script>
    <script src="js/pois.js"></script>
+   <script src="js/directions.js"></script>
   </body>
 </html>

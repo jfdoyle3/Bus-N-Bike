@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap/sidebar.css"/>
+
     <link rel="stylesheet" type="text/css" href="./css/map.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -16,76 +16,48 @@
 </head>
   <body>
 <!-- <h1>Bus N Bike</h1> -->
-<!-- NavBar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Bus N Bike</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<!-- NAVBAR -->
+<!-- <header>
+	<nav>
+		<div class="nav-wrapper">
+			<div class="row">
+				<div class="col s12">
+					<a href="#" data-target="sidenav-1" class="left sidenav-trigger hide-on-medium-and-up"><i class="material-icons">menu</i></a>
+					<a href="#" data-target="sidenav-2" class="right sidenav-trigger show-on-medium-and-up"><i class="material-icons">menu</i></a>
+					<a href="https://codepen.io/collection/nbBqgY" target="_blank" class="brand-logo">Materialize Framework</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+</header> -->
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Dropdown
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
-        </li>
-      </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search" aria-label="Search">
-        <input type="button" value="Search" onclick="FindAddress()"/>
-      </form>
-    </div>
-  </nav>
+	
 
 
-  <!-- SideBar -->
-  <!-- Side navigation -->
-<div class="sidenav">
-    <input id="home" type="button" value="Home" onclick="Home();" />
-    <input id="oceanMist" type="button" value="Ocean Mist" onclick="OceanMist();" />
+<!-- LEFT SIDEBAR	 -->
+<form id="sidenav-1" class="sidenav sidenav-fixed">
+  <div class="container">
+    <a class="waves-effect waves-light btn-small" id="home" type="button" value="Home" onclick="Home();">Home</a>
+    <a class="waves-effect waves-light btn-small" id="Ocean Mist" type="button" value="Ocean Mist" onclick="OceanMist();">Ocean Mist</a>
+    <br>
+    <h5>GPS</h5>
+    <input id="latitude" type="text" placeholder= "Latitude" />
+    <input id="longitude" type="text" placeholder="Longitude"/>
+    <a class="waves-effect waves-light btn-small" id="Location" type="button" value="Location" onclick="Location();">Where Am I?</a>
+  </div>
+</form>
+
+<!-- 
      <br>
      <h3>GPS</h3>
      <input id="latitude" type="text" placeholder= "Latitude" />
      <input id="longitude" type="text" placeholder="Longitude"/>
-     <input id="location" type="button" value="Display GPS" onclick="Location();" />
-  <form class="form-inline"> 
-    
-     <h3>Directions</h3>
-     <input id="start" type="text" />
-     <input id="end" type="text" />
-     <div class="form-group">
-     <input id="directions" type="button" value="Directions" onclick="Directions();" /> 
-    <select id="mode" onchange="calcRoute();">
-      <option value="DRIVING">Driving</option>
-      <option value="WALKING">Walking</option>
-      <option value="BICYCLING">Bicycling</option>
-      <option value="TRANSIT">Transit</option>
-    </select> 
-    </div>
-  </form>
-</div>
+     <input id="location" type="button" value="Display GPS" onclick="Location();" /> -->
 
-<!--Body:  Map -->
+	<!--Body:  Map -->
   <div class="main">
-     <div id="map"></div>
-  </div>
-
+    <div id="map"></div>
+ </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

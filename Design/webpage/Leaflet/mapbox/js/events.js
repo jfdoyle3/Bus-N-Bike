@@ -4,7 +4,7 @@ function onMapClick(e) {
     popup
     .setLatLng(e.latlng)
     .setContent("You clicked the map at " + e.latlng.toString())
-    .openOn(riMap);
+    .openOn(mapBox);
 }
 
-riMap.on('click', onMapClick);
+mapBox.on('click', onMapClick);

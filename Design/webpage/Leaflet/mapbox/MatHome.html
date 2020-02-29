@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
+    <link rel="stylesheet" type="text/css" href="./css/materialize/page.css"/>
     <link rel="stylesheet" type="text/css" href="./css/map.css"/>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
@@ -17,7 +17,8 @@
   <body>
 <!-- <h1>Bus N Bike</h1> -->
 <!-- NAVBAR -->
-<!-- <header>
+
+<header>
 	<nav>
 		<div class="nav-wrapper">
 			<div class="row">
@@ -29,14 +30,16 @@
 			</div>
 		</div>
 	</nav>
-</header> -->
+</header>
 
 	
 
-
+<div class="container">
 <!-- LEFT SIDEBAR	 -->
 <form id="sidenav-1" class="sidenav sidenav-fixed">
   <div class="container">
+    <br>
+    <h5>Presets</h5>
     <a class="waves-effect waves-light btn-small" id="home" type="button" value="Home" onclick="Home();">Home</a>
     <a class="waves-effect waves-light btn-small" id="Ocean Mist" type="button" value="Ocean Mist" onclick="OceanMist();">Ocean Mist</a>
     <br>
@@ -46,19 +49,15 @@
     <a class="waves-effect waves-light btn-small" id="Location" type="button" value="Location" onclick="Location();">Where Am I?</a>
   </div>
 </form>
-
-<!-- 
-     <br>
-     <h3>GPS</h3>
-     <input id="latitude" type="text" placeholder= "Latitude" />
-     <input id="longitude" type="text" placeholder="Longitude"/>
-     <input id="location" type="button" value="Display GPS" onclick="Location();" /> -->
+</div>
 
 	<!--Body:  Map -->
   <div class="main">
     <div id="map"></div>
  </div>
-
+<footer>
+  <p>Typed by the fingers of Jim Doyle</p>
+</footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

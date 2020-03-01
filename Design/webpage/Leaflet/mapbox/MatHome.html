@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Bus N Bike</title>
+    <title>MatBus</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,46 +15,37 @@
 
 </head>
   <body>
-<!-- <h1>Bus N Bike</h1> -->
-<!-- NAVBAR -->
+    <!-- Navbar goes here -->
+ 
+    <nav>
+      <div class="nav-wrapper">
+        <div class="row">
+          <div class="col s12">
+            <h4>Bus-N-Bike</h4>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Page Layout here -->
+    <div class="row">
+      <div class="col s3">
+            <br>
+            <h5>Presets</h5>
+            <a class="waves-effect waves-light btn-small" id="home" type="button" value="Home" onclick="Home();">Home</a>
+            <a class="waves-effect waves-light btn-small" id="Ocean Mist" type="button" value="Ocean Mist" onclick="OceanMist();">Ocean Mist</a>
+            <br>
+            <h5>GPS</h5>
+            <input id="latitude" type="text" placeholder= "Latitude" />
+            <input id="longitude" type="text" placeholder="Longitude"/>
+            <a class="waves-effect waves-light btn-small" id="Location" type="button" value="Location" onclick="Location();">Where Am I?</a>
+      </div>
 
-<header>
-	<nav>
-		<div class="nav-wrapper">
-			<div class="row">
-				<div class="col s12">
-					<a href="#" data-target="sidenav-1" class="left sidenav-trigger hide-on-medium-and-up"><i class="material-icons">menu</i></a>
-					<a href="#" data-target="sidenav-2" class="right sidenav-trigger show-on-medium-and-up"><i class="material-icons">menu</i></a>
-					<a href="https://codepen.io/collection/nbBqgY" target="_blank" class="brand-logo">Materialize Framework</a>
-				</div>
-			</div>
-		</div>
-	</nav>
-</header>
-
-	
-
-<div class="container">
-<!-- LEFT SIDEBAR	 -->
-<form id="sidenav-1" class="sidenav sidenav-fixed">
-  <div class="container">
-    <br>
-    <h5>Presets</h5>
-    <a class="waves-effect waves-light btn-small" id="home" type="button" value="Home" onclick="Home();">Home</a>
-    <a class="waves-effect waves-light btn-small" id="Ocean Mist" type="button" value="Ocean Mist" onclick="OceanMist();">Ocean Mist</a>
-    <br>
-    <h5>GPS</h5>
-    <input id="latitude" type="text" placeholder= "Latitude" />
-    <input id="longitude" type="text" placeholder="Longitude"/>
-    <a class="waves-effect waves-light btn-small" id="Location" type="button" value="Location" onclick="Location();">Where Am I?</a>
-  </div>
-</form>
-</div>
-
-	<!--Body:  Map -->
-  <div class="main">
-    <div id="map"></div>
- </div>
+      <div class="col s9">
+      	<!--Body:  Map -->
+         <div class="main">
+            <div id="map"></div>
+         </div> 
+      </div>
 <footer>
   <p>Typed by the fingers of Jim Doyle</p>
 </footer>

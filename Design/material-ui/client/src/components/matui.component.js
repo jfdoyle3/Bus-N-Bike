@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import '../css/test.css';
 
 export default class MatUI extends Component {
+   
     render() {
         const pStyle = {
             color: "white",
@@ -12,6 +13,12 @@ export default class MatUI extends Component {
             padding: "10px",
             fontFamily: "Arial"
           };
+        
+        this.handleClick=(e)=> {
+          e.preventDefault();
+          alert('The link was clicked.');
+        };
+        
         return (
             <div>
                 <h3>This is from a CSS file</h3>
@@ -22,7 +29,7 @@ export default class MatUI extends Component {
                 <br />
                 <p style={pStyle}>This is a style object, similar to a style sheet in a html file.</p>
                 <br />
-                <Button variant="contained" color="primary">Hello World</Button>
+                <Button variant="contained" color="default" onClick={this.handleClick}>Hello World</Button>
             </div>
         )
     }

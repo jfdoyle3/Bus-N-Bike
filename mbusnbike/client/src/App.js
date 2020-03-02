@@ -4,7 +4,8 @@ import {BrowserRouter as Router, Route } from "react-router-dom";
 
 import Navbar from "./components/navbar.component"
 import Sidebar from "./components/sidebar.component";
-import Test from "./components/test.component"
+import Test from "./components/test.component";
+import Page from "./components/pagelayout.component";
 
 function App() {
   return (
@@ -12,9 +13,7 @@ function App() {
  
   <Router>
     <div className="container">
-     <Navbar />
-     <Sidebar />
-     <Test />
+    <Page />
     </div>
   </Router>
  

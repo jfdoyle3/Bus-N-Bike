@@ -1,15 +1,17 @@
 import React from 'react';
+import {BrowserRouter as Router, Route } from "react-router-dom";
 
-import './App.css';
 
-import Test from "./components/test.component";
+import MatUI from "./components/matui.component";
 
 function App() {
   return (
-   
-   <Test />
-   
-    );
+    <Router>
+       <MatUI />
+    </Router>
+
+
+  );
 }
 
 export default App;

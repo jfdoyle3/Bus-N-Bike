@@ -19,9 +19,8 @@ export default class Test extends Component {
                 <br />
                 <p style={{color: 'red'}}>This line will display on page.</p>
                 <br />
-                <p style={pStyle}>This is a style object, simular to a style sheet in a html file.</p>
+                <p style={pStyle}>This is a style object, similar to a style sheet in a html file.</p>
                 <br />
-                
             </div>
         )
     }

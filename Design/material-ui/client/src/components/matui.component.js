@@ -1,9 +1,10 @@
 // Basic React Component
 // inline: css h3 tag  normally it's background-color. React it's camelCase backgroundColor
 import React, {Component} from 'react';
+import Button from '@material-ui/core/Button';
 import '../css/test.css';
 
-export default class Test extends Component {
+export default class MatUI extends Component {
     render() {
         const pStyle = {
             color: "white",
@@ -21,7 +22,7 @@ export default class Test extends Component {
                 <br />
                 <p style={pStyle}>This is a style object, similar to a style sheet in a html file.</p>
                 <br />
-                
+                <Button variant="contained" color="primary">Hello World</Button>
             </div>
         )
     }

@@ -2,7 +2,7 @@ mapbox token: pk.eyJ1IjoiamZkb3lsZTMiLCJhIjoiY2s2bGpwdTM3MGNoNjNsbzZkaHRxZGxxbCJ
 
 
 GPS:
-Providence, RI: lat: 41.8239891, lng: -71.4128343
+Providence, RI: lat, lng: 41.8239891,-71.4128343
 
 Home: 41.87092932,-71.42788283
       1190 Charles St, North Providence, RI, 02904

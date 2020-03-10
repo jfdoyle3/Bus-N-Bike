@@ -5,31 +5,65 @@ const url="https://api.mapbox.com/geocoding/v5/mapbox.places/"+location+".json?a
 
 FindByAddress(url);
 
+//const data="AddressData(data)";
+
+//FindByAddress(url);
+ var data=FindByAddress(url);
+//var dInfo=JSON.parse(data);
+ process.stdout.write(data);
+// console.log(data);
+//FindByAddress(url);
+//var getAResp=AddressData(data);
+//console.log(getAResp);
+
 
 function FindByAddress(url) {
+  const https = require('https');
 
-const https=require ('https');
-
-https.get(url, res => {
-  let body = "";
-
-
-  res.on("data", data => {
-    body += data;
-  });
-
-  res.on('end', () => {
-    body=JSON.parse(body);  
-
-    console.log(body);
+  https.get(url, (res) => {
+    console.log('statusCode:', res.statusCode);
+    console.log('headers:', res.headers);
   
+    res.on('data', (d) => {
+     // process.stdout.write(d);
+      return d;
+    });
+  
+  }).on('error', (e) => {
+    console.error(e);
   });
+  
+}
 
-}).on("error", (err) => {
-  console.log("Error: " + err.message);
-});
 
-};
+// function FindByAddress(url) {
+
+// const https=require ('https');
+
+// https.get(url, res => {
+//   let jsonData = "";
+
+//   // A chunk of data has been recieved.
+//   res.on("data", chunk => {
+//     jsonData += chunk;
+//   });
+
+//   // The whole response has been received. Print out the result.
+//   res.on('end', () => {
+//     //var data=JSON.parse(jsonData);  
+//    var jData=JSON.stringify(body); 
+//   //console.log(jsonData);
+//    // console.log(JSON.parse(jsonData));
+//    var jString={ message: "trying return json data"};
+//    var string="trying return json data";
+  
+//   });
+
+// }).on("error", (err) => {
+//   console.log("Error: " + err.message);
+// });
+// return string;
+// };
 
 function AddressData(){
     let info="This is the return";

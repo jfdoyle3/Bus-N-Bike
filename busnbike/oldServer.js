@@ -2,8 +2,7 @@ const express = require('express'),
       server = express(), 
       cors=require('cors'),
       mongoose=require('mongoose'),
-      colors=require('colors'),
-      path=require('path');
+
 
 
 

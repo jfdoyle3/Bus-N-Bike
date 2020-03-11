@@ -7,9 +7,10 @@ let User=require('../models/users.model');
 
 // This is localhost/users/                              // GET Request
 router.route('/').get ((req, res)=>{                     // ROUTE name
-    User.find()                                          // FIND all Users 
-    .then(users=> res.json(users))                       // THEN (promise) returns data in JSON format
-    .catch(err=> res.status(400).json('Error: '+err));   // CATCH returns ERROR and displays it.
+    // User.find()                                          // FIND all Users 
+    // .then(users=> res.json(users))                       // THEN (promise) returns data in JSON format
+    // .catch(err=> res.status(400).json('Error: '+err));   // CATCH returns ERROR and displays it.
+    res.send("Users!!!!");
 });
 
 // This is localhost/users/add                          // POST Request

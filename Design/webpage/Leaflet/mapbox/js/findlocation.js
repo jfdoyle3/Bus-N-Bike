@@ -3,67 +3,61 @@ const url="https://api.mapbox.com/geocoding/v5/mapbox.places/"+location+".json?a
 
 
 
-FindByAddress(url);
-
+var jdata=FindByAddress(url);
+var pData=JSON.parse(jdata);
+console.log(pData);
 //const data="AddressData(data)";
 
-//FindByAddress(url);
- var data=FindByAddress(url);
-//var dInfo=JSON.parse(data);
- process.stdout.write(data);
-// console.log(data);
-//FindByAddress(url);
-//var getAResp=AddressData(data);
-//console.log(getAResp);
+FindByAddress(url);
 
-
-function FindByAddress(url) {
-  const https = require('https');
-
-  https.get(url, (res) => {
-    console.log('statusCode:', res.statusCode);
-    console.log('headers:', res.headers);
-  
-    res.on('data', (d) => {
-     // process.stdout.write(d);
-      return d;
-    });
-  
-  }).on('error', (e) => {
-    console.error(e);
-  });
-  
-}
 
 
 // function FindByAddress(url) {
+//   const https = require('https');
 
-// const https=require ('https');
-
-// https.get(url, res => {
-//   let jsonData = "";
-
-//   // A chunk of data has been recieved.
-//   res.on("data", chunk => {
-//     jsonData += chunk;
-//   });
-
-//   // The whole response has been received. Print out the result.
-//   res.on('end', () => {
-//     //var data=JSON.parse(jsonData);  
-//    var jData=JSON.stringify(body); 
-//   //console.log(jsonData);
-//    // console.log(JSON.parse(jsonData));
-//    var jString={ message: "trying return json data"};
-//    var string="trying return json data";
+//   https.get(url, (res) => {
+//     console.log('statusCode:', res.statusCode);
+//     console.log('headers:', resonsole.log(jdata);.headers);
   
+//     res.on('data', () => {
+//      // process.stdout.write(d);
+      
+//     });
+  
+//   }).on('error', (e) => {
+//     console.error(e);
 //   });
+  
+// }
 
-// }).on("error", (err) => {
-//   console.log("Error: " + err.message);
-// });
-// return string;
-// };
+
+function FindByAddress(url) {
+
+const https=require ('https');
+
+https.get(url, res => {
+  let jsonData = {};
+
+  // A chunk of data has been recieved.
+  res.on("data", chunk => {
+    jsonData+=chunk;
+  });
+
+  // The whole response has been received. Print out the result.
+  res.on('end', () => {
+    // var parData=JSON.parse(jsonData); 
+    // //var  data = JSON.stringify(jsonData);
+    // console.log(parData.features.text);
+    jsonData=Buffer.concat(jsonData).toString();
+    return jsonData;
+  });
+
+}).on("error", (err) => {
+  console.log("Error: " + err.message);
+});
+
+
+};
 
 function AddressData(){
     let info="This is the return";

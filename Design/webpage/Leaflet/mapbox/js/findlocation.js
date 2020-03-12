@@ -3,16 +3,16 @@ const url="https://api.mapbox.com/geocoding/v5/mapbox.places/"+location+".json?a
 //const data="AddressData(data)";
 
 //FindByAddress(url);
- var data=FindByAddress(url);
+ //var data=FindByAddress(url);
 //var dInfo=JSON.parse(data);
- process.stdout.write(data);
+// process.stdout.write(data);
 // console.log(data);
 //FindByAddress(url);
 //var getAResp=AddressData(data);
 //console.log(getAResp);
 
 
-function FindByAddress(url) {
+var a=function FindByAddress(url) {
   const https = require('https');
 
   https.get(url, (res) => {
@@ -30,7 +30,7 @@ function FindByAddress(url) {
   
 }
 
-
+console.log(a);
 // function FindByAddress(url) {
 
 // const https=require ('https');

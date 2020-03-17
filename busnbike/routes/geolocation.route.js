@@ -1,15 +1,12 @@
 const router = require('express').Router(),
-      // http=require('http'),
-      // axios = require('axois');
-        addressJSON=require('../js/address'),
-        locationData=require('../js/jsonLocation');
+      addressJSON=require('../js/address'),
+      locationData=require('../js/jsonLocation');
 
 
-router.get("/", (req, res, next)=>{
+router.get("/", (req, res)=>{
   // res.send('GET /');
   res.json({message: '/'});
   console.log('/');
-   next();
 });
 
 router.get("/address/:address", (req,res)=>{
@@ -24,6 +21,7 @@ addressJSON.findAddress(req.params.address)
             });
   
 });
+
 router.get("/static/:dummyInput", (req,res)=>{
   console.log(req.params.dummyInput);
   //res.json({center: req.params.xyz});
@@ -38,6 +36,7 @@ locationData.jsonLocation()
   
  
 });
+
 // router.get("/place", (req,res)=>{
 //  // var geoLocate=JSON.stringify(req.params.qplace);
 //   console.log(req.query.qplace);

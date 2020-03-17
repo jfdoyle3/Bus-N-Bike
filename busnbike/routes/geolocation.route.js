@@ -17,7 +17,7 @@ router.get("/address/:address", (req,res)=>{
   //res.json({center: req.params.xyz});
 addressJSON.findAddress(req.params.address)
            .then((data)=>{
-              console.log(data.features);
+            res.send(JSON.stringify(data));
             })
            .catch((err)=>{
               console.log(err);
@@ -29,7 +29,8 @@ router.get("/static/:dummyInput", (req,res)=>{
   //res.json({center: req.params.xyz});
 locationData.jsonLocation()
            .then((data)=>{
-              console.log(data);
+              //console.log(data);
+              res.send(JSON.stringify(data));
             })
            .catch((err)=>{
               console.log(err);

@@ -6,20 +6,19 @@ const router = require('express').Router(),
 
 router.get("/", (req, res, next)=>{
   // res.send('GET /');
-  // res.json({message: '/'});
-  // console.log('/');
-  
+  res.json({message: '/'});
+  console.log('/');
    next();
 });
 
 router.get("/:address", (req,res, next)=>{
   console.log(req.params.address);
   //res.json({center: req.params.xyz});
-  addressJSON.findAddress(req.params.address).then((data)=>{
-    console.log(data);
-  }).catch((err)=>{
-    console.log(err);
-  })
+addressJSON.findAddress(req.params.address)
+           .then((data)=>{
+              console.log(data);
+            });
+  
   next();
 });
 

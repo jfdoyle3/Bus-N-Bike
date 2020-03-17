@@ -9,7 +9,7 @@ findAddress = (address)=> {
         body += chunk;
       });
 
-      res.on('end', ()=> {
+      res.on('end',()=> {
         resolve( JSON.parse(body) );
       });
 

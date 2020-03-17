@@ -16,7 +16,10 @@ router.get("/:address", (req,res, next)=>{
   //res.json({center: req.params.xyz});
 addressJSON.findAddress(req.params.address)
            .then((data)=>{
-              console.log(data);
+              console.log(data.features);
+            })
+           .catch((err)=>{
+              console.log(err);
             });
   
   next();

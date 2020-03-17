@@ -1,18 +1,25 @@
-const router = require('express').Router();
+const router = require('express').Router(),
+      // http=require('http'),
+      // axios = require('axois');
+        addressJSON=require('../js/address');
 
 
 router.get("/", (req, res, next)=>{
-   res.send('GET /');
+  // res.send('GET /');
   // res.json({message: '/'});
-   console.log('/');
+  // console.log('/');
+  
    next();
 });
 
-router.get("/:addressZoom", (req,res, next)=>{
-  let coorZoom=req.params.addressZoom.split(",");
-  console.log(coorZoom[0]);
+router.get("/:address", (req,res, next)=>{
+  console.log(req.params.address);
   //res.json({center: req.params.xyz});
-
+  addressJSON.findAddress(req.params.address).then((data)=>{
+    console.log(data);
+  }).catch((err)=>{
+    console.log(err);
+  })
   next();
 });
 

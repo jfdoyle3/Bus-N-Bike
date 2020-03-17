@@ -15,24 +15,32 @@
 
 // export default App;
 import React from 'react';
-import L from 'leaflet';
+import { Map as LeafletMap, TileLayer, Marker, Popup } from 'react-leaflet';
 
 class Map extends React.Component {
-  componentDidMount() {
-    // create map
-    this.map = L.map('map', {
-      center: [49.8419, 24.0315],
-      zoom: 16,
-      layers: [
-        L.tileLayer('https://api.mapbox.com/styles/v1/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiamZkb3lsZTMiLCJhIjoiY2s2bGpwdTM3MGNoNjNsbzZkaHRxZGxxbCJ9.qoUulrGgoNG2qLQENJG3IA', {
-          attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        }),
-      ]
-    });
-  }
-
   render() {
-    return <div id="map"></div>
+    return (
+      <LeafletMap
+        center={[50, 10]}
+        zoom={6}
+        attributionControl={true}
+        zoomControl={true}
+        doubleClickZoom={true}
+        scrollWheelZoom={true}
+        dragging={true}
+        animate={true}
+        easeLinearity={0.35}
+      >
+        <TileLayer
+          url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'
+        />
+        <Marker position={[50, 10]}>
+          <Popup>
+            Popup for any custom information.
+          </Popup>
+        </Marker>
+      </LeafletMap>
+    );
   }
 }
 

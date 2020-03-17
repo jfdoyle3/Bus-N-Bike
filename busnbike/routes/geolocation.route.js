@@ -12,23 +12,10 @@ router.get("/", (req, res, next)=>{
    next();
 });
 
-// router.get("/:address", (req,res, next)=>{
-//   console.log(req.params.address);
-//   //res.json({center: req.params.xyz});
-// addressJSON.findAddress(req.params.address)
-//            .then((data)=>{
-//               console.log(data.features);
-//             })
-//            .catch((err)=>{
-//               console.log(err);
-//             });
-  
-//   next();
-// });
-router.get("/:address", (req,res, next)=>{
+router.get("/address/:address", (req,res)=>{
   console.log(req.params.address);
   //res.json({center: req.params.xyz});
-locationData.jsonLocation()
+addressJSON.findAddress(req.params.address)
            .then((data)=>{
               console.log(data.features);
             })
@@ -36,7 +23,19 @@ locationData.jsonLocation()
               console.log(err);
             });
   
-  next();
+});
+router.get("/static/:dummyInput", (req,res)=>{
+  console.log(req.params.dummyInput);
+  //res.json({center: req.params.xyz});
+locationData.jsonLocation()
+           .then((data)=>{
+              console.log(data);
+            })
+           .catch((err)=>{
+              console.log(err);
+            });
+  
+ 
 });
 // router.get("/place", (req,res)=>{
 //  // var geoLocate=JSON.stringify(req.params.qplace);

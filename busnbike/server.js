@@ -9,8 +9,8 @@ const express = require('express'),
       bus=require('./routes/bus.route'),
       location=require('./routes/geolocation.route');
 
-      server.use(cors());
-      server.use(express.json());
+server.use(cors());
+server.use(express.json());
 
 server.use("/home",home); 
 server.use("/bus",bus); 

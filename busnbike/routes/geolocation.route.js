@@ -1,7 +1,7 @@
 const router = require('express').Router(),
       addressJSON=require('../js/address'),
       locationData=require('../js/jsonLocation');
-
+      fetchInfo=require('../js/fetchinfo');
 
 router.get("/", (req, res)=>{
   // res.send('GET /');
@@ -14,7 +14,8 @@ router.get("/address/:address", (req,res)=>{
   //res.json({center: req.params.xyz});
 addressJSON.findAddress(req.params.address)
            .then((data)=>{
-            res.send(JSON.stringify(data));
+           res.send(JSON.stringify(data));
+           // res.JSON(data);
             })
            .catch((err)=>{
               console.log(err);
@@ -28,7 +29,24 @@ router.get("/static/:dummyInput", (req,res)=>{
 locationData.jsonLocation()
            .then((data)=>{
               //console.log(data);
+              //res.JSON(data);
               res.send(JSON.stringify(data));
+            })
+           .catch((err)=>{
+              console.log(err);
+            });
+  
+ 
+});
+
+router.get("/fetchinfo/:fetchInput", (req,res)=>{
+  console.log(req.params.fetchInput);
+  //res.json({center: req.params.xyz});
+fetchInfo.fetchInfo()
+           .then((data)=>{
+              //console.log(data);
+             // res.JSON(data);
+             res.send(JSON.stringify(data));
             })
            .catch((err)=>{
               console.log(err);

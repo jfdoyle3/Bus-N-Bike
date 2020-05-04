@@ -80,7 +80,7 @@ const { Header, Content, Footer, Sider } = Layout;
           content area, can scroll if content extends screen
         </div>
       </Content>
-      <Footer style={{ textAlign: 'center' }}>Typed by the fingers of Jim Doyle  ©2020 </Footer>
+      <Footer style={{ textAlign: 'center' }}>TypedP by the fingers of Jim Doyle  ©2020 </Footer>
     </Layout>
   </Layout>
 // All Components have this line: change name 'NavBar'
